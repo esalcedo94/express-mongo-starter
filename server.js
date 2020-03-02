@@ -27,19 +27,28 @@ db.on('open' , ()=>{});
 //___________________
 //Middleware
 //___________________
+//use method override
+app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //use public folder for static assets
 app.use(express.static('public'));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded({ extended: true }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
-//use method override
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+
+
+
+//___________________
+// Controllers
+//___________________
+const laxController = require('./controllers/lax_controller.js')
+app.use('/lax', laxController)
 //___________________
 // Routes
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+
+  res.redirect("/lax");
 });
 //___________________
 //Listener

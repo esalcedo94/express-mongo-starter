@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../public/head.ejs') %>
+  </head>
+  <body>
+    <nav class="teal lighten-2">
+      <%- include ('../public/nav.ejs') %>
+    </nav>
+  <body>
+    <h1>San Diego Section Lacrosse</h1>
+    <ul>
+      <li>
+        <% for (let team of lax) { %>
+        <%= lax.team1 %> vs <%= lax.team2 %>
+        
+        <%} %>
+      </li>
+    </ul>
+  </body>
+</html>
