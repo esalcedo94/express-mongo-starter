@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../public/head.ejs') %>
+  </head>
+  <body>
+    <nav class="teal lighten-2">
+      <%- include ('../public/nav.ejs') %>
+    </nav>
+    <form action="/logs" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" placeholder="Title" name="title" />
+      <label for="Entry">Entry:</label>
+      <input type="textarea" placeholder="entry" name="entry" />
+      <br />
+      <div>
+        <label for="shipIsBroken">
+            <input
+              type="checkbox"
+              id="shipIsBroken"
+              name="shipIsBroken"
+            />
+            <span>Ship is broken</span>
+          </label>
+        </div>
+      </div>
+      <br>
+      <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
+    </form>
+  </body>
+</html>

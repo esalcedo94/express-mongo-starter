@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 const lax = new mongoose.Schema({
-  team1: ["Carlsbad", "El Camino", "La Jolla Country Day", "CCA", "LCC", "Fallbrook"],
-  team2: ["Carlsbad", "El Camino", "La Jolla Country Day", "CCA", "LCC", "Fallbrook"],
-  score: String,
+  team1: String,
+  team2: String,
+  score1: Number,
+  score2: Number,
   location: String
 
 }, {timestamps: true})
