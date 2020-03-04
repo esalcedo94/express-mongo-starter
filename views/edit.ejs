@@ -10,33 +10,33 @@
     <div class="container">
       <h1>Edit <%=lax.team1%> VS <%=lax.team2%></h1>
       <div class="row">
-            <form class="col s12" action="/lax" method="POST">
+            <form class="col s12" action="/lax/<%=lax.id%>?_method=PUT" method="POST">
                 <div class="row">
                     <div class="input-field col s5">
-                        <input type="text" name="team1" /> 
-                        <label for="Team">Team</label>
+                        <label for="Team"><%=lax.team1 %></label>
+                        <input type="text" name="team1" value="<%=lax.team1 %>"/> 
                         <label for="Score"></label>
-                        <input type="number" name="score1" /> 
+                        <input type="number" name="score1" value="<%=lax.score1 %>"/> 
                     </div>
-                    <span class="col">VS</span>
+                    <span style="margin-top: 4em;" class="col">VS</span>
                     <div class="input-field col s5">
-        
-                    <label for="Team">Team</label>
-                    <input type="text" name="team2" /> 
-                    <label for="Score"></label>
-                    <input type="number" name="score2" /> 
-                </div>
+                        <input type="text" name="team2" value="<%=lax.team2 %>"/> 
+                        <label for="Team"><%=lax.team2 %></label>
+
+                        <label for="Score"></label>
+                        <input type="number" name="score2" value="<%=lax.score2 %>" /> 
+                    </div>
             </div>
-            <label for="Location">Location:</label>
-              <input type="text" placeholder="San Diego" name="Location" />
+            <label for="Location">Location</label>
+              <input type="text" name="location" value="<%=lax.location %>" />
               <br />
-              </div>
-              <br>
               <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
             </form>
+              </div>
+              <br>
       <form>
       <button class="waves-effect waves-light btn-small" type="button" name="button">
-        <a href="/logs">Back</a>
+        <a href="/lax">Back</a>
       </button>
     </div>
   </body>

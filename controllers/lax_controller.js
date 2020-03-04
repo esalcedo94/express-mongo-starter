@@ -26,7 +26,8 @@ lax.delete("/:id", (req, res) => {
 //show
 lax.get("/:id", (req, res) => {
   Lax.findById(req.params.id, (err, foundLax) => {
-    req.render("show.ejs", {
+    res.render("show.ejs", {
+      
       lax: foundLax
     });
   });

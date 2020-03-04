@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../public/head.ejs') %>
+  </head>
+  <body>
+    <nav class="teal lighten-2">
+      <%- include ('../public/nav.ejs') %>
+    </nav>
+    <div class="container">
+    <h1><%=lax.team1 %> VS <%=lax.team2 %></h1>
+    <h3>Score: <%=lax.score1%> - <%=lax.score2%></h3>
+    <h3>
+        Location: <%=lax.location%>
+    </h3>
+    <form action="/lax/<%=lax._id%>?_method=DELETE" method="POST">
+      <input class="waves-effect waves-light btn-small" type="submit" value="DELETE" />
+    </form>
+    <button class="waves-effect waves-light btn-small" type="button" name="button">
+      <a href="/lax">Back</a>
+    </button>
+    </div>
+  </body>
+</html>
