@@ -8,14 +8,23 @@
       <%- include ('../public/nav.ejs') %>
     </nav>
   <body>
-    <h1>San Diego Section Lacrosse</h1>
-    <ul>
-      <li>
-        <% for (let team of lax) { %>
-        <%= team.team1 %> vs <%= team.team2 %>
-        
-        <%} %>
-      </li>
-    </ul>
+    <div class="container">
+      <h1>Games</h1>
+      <ul>
+        <li>
+          <% for (let element of lax) { %>
+            <a href="/lax/<%=element.id%>"><%= element.team1 %> vs <%= element.team2 %></a>
+            <br><%= element.team1 %> <%= element.score1 %></br>
+          vs 
+          <br>
+          <%= element.team2 %> <%= element.score2 %></br>
+          <!-- <form action="/lax/<%=element._id%>?_method=DELETE" method="POST">
+            <input class="waves-effect waves-light btn-small" type="submit" value="DELETE" />
+          </form> -->
+          <%} %>
+        </li>
+      </ul>
+
+    </div>
   </body>
 </html>

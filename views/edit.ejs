@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../public/head.ejs') %>
+  </head>
+  <body>
+      <nav class="teal lighten-2">
+        <%- include ('../public/nav.ejs') %>
+      </nav>
+    <div class="container">
+      <h1>Edit <%=lax.team1%> VS <%=lax.team2%></h1>
+      <div class="row">
+            <form class="col s12" action="/lax" method="POST">
+                <div class="row">
+                    <div class="input-field col s5">
+                        <input type="text" name="team1" /> 
+                        <label for="Team">Team</label>
+                        <label for="Score"></label>
+                        <input type="number" name="score1" /> 
+                    </div>
+                    <span class="col">VS</span>
+                    <div class="input-field col s5">
+        
+                    <label for="Team">Team</label>
+                    <input type="text" name="team2" /> 
+                    <label for="Score"></label>
+                    <input type="number" name="score2" /> 
+                </div>
+            </div>
+            <label for="Location">Location:</label>
+              <input type="text" placeholder="San Diego" name="Location" />
+              <br />
+              </div>
+              <br>
+              <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
+            </form>
+      <form>
+      <button class="waves-effect waves-light btn-small" type="button" name="button">
+        <a href="/logs">Back</a>
+      </button>
+    </div>
+  </body>
+</html>
