@@ -5,7 +5,7 @@ Creator: Eduardo Salcedo<br>
 
 ### Technologies
 
-- Used mongodb to to store data
+- Used mongodb to store data
 - Materialize for CSS of the page
 - Express
 - Mongoose
