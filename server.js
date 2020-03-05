@@ -14,8 +14,8 @@ const session = require('express-session')
 require('dotenv').config();
 const app = express()
 const db = mongoose.connection
-const PORT = 3000
-const mongodbURI = process.env.MONGODBURI
+const PORT = process.env.PORT || 3000;
+const mongodbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017lax';
 
 //___________________
 //Middleware
