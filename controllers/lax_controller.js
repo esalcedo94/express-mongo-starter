@@ -93,17 +93,17 @@ lax.get("/setup/seed", (req, res) => {
       },
       {
         team1: "Canyon Crest Academy",
-        team2: "El Camino",
-        score1: "15",
+        team2: "Fallbrook",
+        score1: "7",
         score2: "5",
-        location: "Carlsbad"
+        location: "Fallbrook"
       },
       {
-        team1: "Carlsbad",
-        team2: "El Camino",
+        team1: "LCC",
+        team2: "SDA",
         score1: "15",
-        score2: "5",
-        location: "Carlsbad"
+        score2: "14",
+        location: "La Costa Canyon"
       },
     ],
     (error, data) => {

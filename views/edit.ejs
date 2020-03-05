@@ -32,7 +32,9 @@
               <input class="waves-effect waves-light btn-large left" type="submit" value="Submit">
             </form>
               </div>
-      <form>
+      <form action="/lax/<%=lax._id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE" class="btn-small red left"/>
+      </form>
      <a href="/lax" class="btn-large right waves-effect waves-light inherit"><i class="material-icons">home</i></a>
     </div>
   </body>
