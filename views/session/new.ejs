@@ -8,14 +8,15 @@
       <%- include ('../../public/nav.ejs') %>
     </nav>
     <div class="container">
-      <h1>New User</h1>
-      <form action="/users" method="POST">
+      <h1>Log in</h1>
+      <form action="/sessions" method="POST">
         <label for="name">User Name:</label>
         <input type="text" name="username" required/>
         <label for="password">Password:</label>
         <input type="password" name="password" />
         <br>
-      <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
+        <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
+
     </div>
   </body>
 </html>

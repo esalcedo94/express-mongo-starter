@@ -10,26 +10,22 @@
   <body>
     <div class="container">
       <h1 style="text-align: center;">Games</h1>
-      <div style="display:flex; justify-content: center;">
+      <div style="display: flex; justify-content:center;">
        <ul style="display: flex; flex-direction: column;">
           <% for (let element of lax) { %>
-
-            <div class="card-panel hoverable">
-            <li style="text-align: center;">
-            <hr>
-            <a style =" font-size: 2rem;" href="/lax/<%=element.id%>"><%= element.team1 %> vs <%= element.team2 %></a>
-            <br><%= element.team1 %> <%= element.score1 %></br>
-          vs 
-          <br>
-          <%= element.team2 %> <%= element.score2 %></br>
-          <a href="/lax/<%=element._id%>/edit">Edit</a>
-
-        </li>
-      </div>
+            <div class="card-panel hoverable" >
+              <li style="text-align: center;">
+              <hr>
+              <a style =" font-size: 2rem;" href="/lax/<%=element.id%>"><%= element.team1 %> vs <%= element.team2 %></a>
+              <br><span style ="float: left;"><%= element.team1 %></span><span style ="float: right;"><%= element.score1 %></span></br>
+              <br>
+              <span style ="float: left;"><%= element.team2 %></span><span style ="float: right;"><%= element.score2 %></span></br>
+              <a href="/lax/<%=element._id%>/edit">Edit</a>
+              </li>
+            </div>
           <%} %>
       </ul>
     </div>
-
-    </div>
+   </div>
   </body>
 </html>

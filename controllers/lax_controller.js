@@ -2,22 +2,33 @@ const express = require("express");
 const Lax = require("../model/lax.js");
 const lax = express.Router();
 
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next();
+  } else {
+    res.redirect("/sessions/new");
+  }
+};
+
 // NEW
-lax.get("/new", (req, res) => {
-  res.render("new.ejs");
+lax.get("/new",isAuthenticated, (req, res) => {
+  res.render("new.ejs",{
+    currentUser: req.session.currentUser
+  });
 });
 
 //Edit
-lax.get("/:id/edit", (req, res) => {
+lax.get("/:id/edit",isAuthenticated, (req, res) => {
   Lax.findById(req.params.id, (err, foundLax) => {
     res.render("edit.ejs", {
-      lax: foundLax
+      lax: foundLax,
+      currentUser: req.session.currentUser
     });
   });
 });
 
 //Deleto
-lax.delete("/:id", (req, res) => {
+lax.delete("/:id", isAuthenticated,(req, res) => {
   Lax.findByIdAndRemove(req.params.id, (err, foundLax) => {
     res.redirect("/lax");
   });
@@ -27,14 +38,14 @@ lax.delete("/:id", (req, res) => {
 lax.get("/:id", (req, res) => {
   Lax.findById(req.params.id, (err, foundLax) => {
     res.render("show.ejs", {
-      
-      lax: foundLax
+      lax: foundLax,
+      currentUser: req.session.currentUser
     });
   });
 });
 
 //Update
-lax.put("/:id", (req, res) => {
+lax.put("/:id",isAuthenticated, (req, res) => {
   Lax.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -46,7 +57,7 @@ lax.put("/:id", (req, res) => {
 });
 
 //create
-lax.post("/", (req, res) => {
+lax.post("/",isAuthenticated, (req, res) => {
   Lax.create(req.body, (err, createdLax)=>{
     res.redirect('/lax')
   })
@@ -62,7 +73,9 @@ lax.get("/", (req, res) => {
       console.log("Fatal error");
     }
     res.render("index.ejs", {
-      lax: allLax
+      lax: allLax,
+      currentUser: req.session.currentUser
+
     });
   });
 });
