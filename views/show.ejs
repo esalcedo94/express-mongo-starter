@@ -8,17 +8,17 @@
       <%- include ('../public/nav.ejs') %>
     </nav>
     <div class="container">
-    <h1><%=lax.team1 %> VS <%=lax.team2 %></h1>
-    <h3>Score: <%=lax.score1%> - <%=lax.score2%></h3>
+      <h1><span style="text-align: left"><%=lax.team1 %> </span> <span style="float: right"><%=lax.score1 %> </span>
+        <br><span style="text-align: left"><%=lax.team2 %> </span> <span style="float: right"><%=lax.score2 %> </span></h1>
+
     <h3>
         Location: <%=lax.location%>
     </h3>
     <form action="/lax/<%=lax._id%>?_method=DELETE" method="POST">
-      <input class="waves-effect waves-light btn-small" type="submit" value="DELETE" />
+      <input type="submit" value="DELETE" class="btn-large left"/>
     </form>
-    <button class="waves-effect waves-light btn-small" type="button" name="button">
-      <a href="/lax">Back</a>
-    </button>
+    <a href="/lax" class="btn-large right waves-effect waves-light inherit"><i class="material-icons">home</i></a>
+
     </div>
   </body>
 </html>

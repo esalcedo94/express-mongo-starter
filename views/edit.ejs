@@ -8,7 +8,7 @@
         <%- include ('../public/nav.ejs') %>
       </nav>
     <div class="container">
-      <h1>Edit <%=lax.team1%> VS <%=lax.team2%></h1>
+      <h1>Edit <%=lax.team1%> vs <%=lax.team2%></h1>
       <div class="row">
             <form class="col s12" action="/lax/<%=lax.id%>?_method=PUT" method="POST">
                 <div class="row">
@@ -29,15 +29,11 @@
             </div>
             <label for="Location">Location</label>
               <input type="text" name="location" value="<%=lax.location %>" />
-              <br />
-              <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
+              <input class="waves-effect waves-light btn-large left" type="submit" value="Submit">
             </form>
               </div>
-              <br>
       <form>
-      <button class="waves-effect waves-light btn-small" type="button" name="button">
-        <a href="/lax">Back</a>
-      </button>
+     <a href="/lax" class="btn-large right waves-effect waves-light inherit"><i class="material-icons">home</i></a>
     </div>
   </body>
 </html>

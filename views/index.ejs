@@ -10,8 +10,8 @@
   <body>
     <div class="container">
       <h1 style="text-align: center;">Games</h1>
-      <div style="display: flex; justify-content:center;">
-       <ul style="display: flex; flex-direction: column;">
+      <div style="display: flex; flex-flow: column wrap;">
+       <ul style="display: flex; flex-direction: column">
           <% for (let element of lax) { %>
             <div class="card-panel hoverable" >
               <li style="text-align: center;">
@@ -20,7 +20,9 @@
               <br><span style ="float: left;"><%= element.team1 %></span><span style ="float: right;"><%= element.score1 %></span></br>
               <br>
               <span style ="float: left;"><%= element.team2 %></span><span style ="float: right;"><%= element.score2 %></span></br>
-              <a href="/lax/<%=element._id%>/edit">Edit</a>
+              <a href="/lax/<%=element._id%>/edit" class="btn-floating right btn-medium blue">
+                  <i class="large material-icons">mode_edit</i>
+                </a>
               </li>
             </div>
           <%} %>

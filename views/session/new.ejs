@@ -8,14 +8,18 @@
       <%- include ('../../public/nav.ejs') %>
     </nav>
     <div class="container">
-      <h1>Log in</h1>
+      <h1 style="text-align: center;">Log in</h1>
       <form action="/sessions" method="POST">
-        <label for="name">User Name:</label>
-        <input type="text" name="username" required/>
-        <label for="password">Password:</label>
-        <input type="password" name="password" />
+        <div class="input-field col s5">
+            <label for="name">User Name</label>
+            <input type="text" name="username" required/>
+        </div>
+        <div class="input-field col s5">
+            <label for="password">Password</label>
+            <input type="password" name="password" />
+        </div>
         <br>
-        <input class="waves-effect waves-light btn-small" type="submit" value="Submit">
+        <input class="waves-effect waves-light btn-small" type="submit" value="Log in">
 
     </div>
   </body>
